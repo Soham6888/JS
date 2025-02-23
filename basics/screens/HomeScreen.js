@@ -1,11 +1,13 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
-      
       <View style={styles.header}>
         <Image source={require("../assets/logo.jpg")} style={styles.logo} />
         <Text style={styles.companyName}>the baya company</Text>
@@ -14,39 +16,38 @@ const HomeScreen = () => {
         </TouchableOpacity>
       </View>
 
-      
       <View style={styles.cardsContainer}>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("Timeline")}>
           <Icon name="timeline" size={30} color="green" style={styles.cardIcon} />
           <Text style={styles.cardTitle}>Timeline</Text>
           <Text style={styles.cardSubtitle}>The Baya Victoria</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("Projects")}>
           <Icon name="work" size={30} color="violet" style={styles.cardIcon} />
           <Text style={styles.cardTitle}>Projects</Text>
           <Text style={styles.cardSubtitle}>5 Projects</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("ScheduleVisit")}>
           <Icon name="event" size={30} color="orange" style={styles.cardIcon} />
           <Text style={styles.cardTitle}>Schedule a Visit</Text>
           <Text style={styles.cardSubtitle}>Choose Time To Visit</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("Profile")}>
           <Icon name="person" size={30} color="purple" style={styles.cardIcon} />
           <Text style={styles.cardTitle}>Profile</Text>
           <Text style={styles.cardSubtitle}>Edit Your Profile</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("Settings")}>
           <Icon name="settings" size={30} color="red" style={styles.cardIcon} />
           <Text style={styles.cardTitle}>Settings</Text>
           <Text style={styles.cardSubtitle}>Select Your Settings</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("History")}>
           <Icon name="history" size={30} color="grey" style={styles.cardIcon} />
           <Text style={styles.cardTitle}>History</Text>
           <Text style={styles.cardSubtitle}>Your Recent Work</Text>
